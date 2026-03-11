@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+app/storage/uploads/
+app/storage/faiss_index/
+app.db
