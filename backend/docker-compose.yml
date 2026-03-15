@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+
+  backend:
+    container_name: ai-learning-backend-container
+    build: .
+    ports:
+      - "8000:8000"
+
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      APP_NAME: AI Learning Assistant
+      DB_URL: sqlite+aiosqlite:///./app.db
+      UPLOAD_DIR: app/storage/uploads
+      FAISS_DIR: app/storage/faiss_index
+      TOP_K: 3
+      CHUNK_SIZE: 900
+      CHUNK_OVERLAP: 150
+      OPENAI_MODEL: gpt-4.1-mini
+
+    volumes:
+      - ./app/storage/uploads:/app/app/storage/uploads
+      - ./app/storage/faiss_index:/app/app/storage/faiss_index
+      - ./app.db:/app/app.db
+
+    restart: always

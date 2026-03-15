@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.env
+app.db
+app/storage/uploads/
+app/storage/faiss_index/
+demo_ui/
